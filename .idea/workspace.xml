@@ -2,47 +2,55 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="caff5bcc-a418-4fbf-b6a6-9c49ce0b5e78" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Category.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminPostsController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminTeamsController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Requests/PostsCreateRequest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Post.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Team.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/TeamLogo.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_01_30_083033_create_posts_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_01_30_083816_create_categories_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_01_30_131141_create_teams_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_01_30_131553_create_team_logos_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/fontawesome-webfont3e6e.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/fontawesome-webfont3e6e.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/fontawesome-webfont3e6e.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/fontawesome-webfont3e6e.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/fontawesome-webfontd41d.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/1580376601aaron-burden-64849-unsplash.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/1580377906agence-olloweb-771631-unsplash(1).jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/1580378282christopher.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/1580381102helio-rosas-302267-unsplash.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/1580381175helio-rosas-302267-unsplash.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/1580389376saidu.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/1580389588pexels-photo-240163.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/holder/post.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/holder/profile.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/backend/admin/fixtures/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/backend/admin/fixtures/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/backend/admin/fixtures/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/SlSport.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/SlSport.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/1580420025realmadrid.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/1580422923alves.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/1580422942arsenal.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/1580423078malaga.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/1580423346alves.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/1580423594atletico.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/1580423749sevilla.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/teamlogos/1580420025realmadrid.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/teamlogos/1580422189everton.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/teamlogos/1580422442barcelona.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/teamlogos/1580422722atletico.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/teamlogos/1580422779alves.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/teamlogos/1580393213pexels-photo-240163.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/teamlogos/1580394842realmadrid.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/teamlogos/1580394881realmadrid.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/teamlogos/1580395373malaga.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/teamlogos/1580395481alves.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/teamlogos/1580395812mancity.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/teamlogos/1580396347italy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/teamlogos/1580397303manutd.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/teamlogos/1580401678arsenal.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/admin/posts/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/admin/posts/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/admin/posts/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/admin/posts/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/admin/posts/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/admin/posts/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/admin/user/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/admin/user/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminTeamsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminTeamsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Photo.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Photo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Team.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Team.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/TeamLogo.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_01_30_131141_create_teams_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_01_30_131141_create_teams_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_01_30_131553_create_team_logos_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/1580335226yvak7f2bxq4-ryan-pouncy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/1580335281yvak7f2bxq4-ryan-pouncy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/1580335354yvak7f2bxq4-ryan-pouncy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/1580335729yvak7f2bxq4-ryan-pouncy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/1580340395saidu.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/1580423123saidu.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/1580340523saidu.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/1580340584saidu.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/1580342083saidu.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/1580342212yvak7f2bxq4-ryan-pouncy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/1580342576gypsy_2_by_dazzle_stock.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/1580376601aaron-burden-64849-unsplash.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/1580377906agence-olloweb-771631-unsplash(1).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/1580378282christopher.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/1580381102helio-rosas-302267-unsplash.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/1580381175helio-rosas-302267-unsplash.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/1580389376saidu.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/1580389588pexels-photo-240163.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/public/teamlogos/1580392979pexels-photo-240163.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/admin/teams/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/admin/teams/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/admin/teams/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/admin/teams/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/admin/teams/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/admin/teams/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,16 +173,16 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/backend/admin" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/images" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\SlSport\public\images" />
       <recent name="C:\xampp\htdocs\SlSport\resources\views\backend\admin" />
       <recent name="C:\xampp\htdocs\SlSport\public\images\holder" />
       <recent name="C:\xampp\htdocs\SlSport\public\fonts" />
       <recent name="C:\xampp\htdocs\SlSport\public" />
-      <recent name="C:\xampp\htdocs\SlSport\resources\css" />
     </key>
   </component>
   <component name="RunManager">
@@ -207,7 +215,7 @@
       <updated>1580324213734</updated>
       <workItem from="1580324215601" duration="19078000" />
       <workItem from="1580370400608" duration="10334000" />
-      <workItem from="1580382655352" duration="6708000" />
+      <workItem from="1580382655352" duration="28015000" />
     </task>
     <servers />
   </component>

@@ -8,7 +8,7 @@ class Team extends Model
 {
     //
     protected $fillable = [
-        'team-logo_id',
+        'photo_id',
         'name',
         'established_in',
         'manager',
@@ -17,8 +17,8 @@ class Team extends Model
         'leagues',
     ];
 
-    public function logo()
+    public function photo()
     {
-        return $this->belongsTo('App\TeamLogo');
+        return $this->belongsTo('App\Photo');
     }
 }

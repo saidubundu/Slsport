@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Photo;
+use App\Team;
+use App\TeamLogo;
 use Illuminate\Http\Request;
 
 class AdminTeamsController extends Controller
@@ -14,6 +17,8 @@ class AdminTeamsController extends Controller
     public function index()
     {
         //
+        $teams = Team::all();
+        return view('backend.admin.teams.index', compact('teams'));
     }
 
     /**
@@ -24,6 +29,7 @@ class AdminTeamsController extends Controller
     public function create()
     {
         //
+        return view('backend.admin.teams.create');
     }
 
     /**
@@ -35,6 +41,19 @@ class AdminTeamsController extends Controller
     public function store(Request $request)
     {
         //
+        $input = $request->all();
+        if ($file = $request->file('photo_id')){
+            $name = time() . $file->getClientOriginalName();
+
+            $file->move('images', $name);
+
+            $photo = Photo::create(['file'=>$name]);
+
+            $input['photo_id'] = $photo->id;
+        }
+        Team::create($input);
+
+        return redirect('admin/teams');
     }
 
     /**
@@ -57,6 +76,8 @@ class AdminTeamsController extends Controller
     public function edit($id)
     {
         //
+        $teams = Team::findOrFail($id);
+        return view('backend.admin.teams.edit', compact('teams'));
     }
 
     /**
@@ -69,6 +90,18 @@ class AdminTeamsController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $team = Team::findOrFail($id);
+        $input = $request->all();
+
+        if ($file = $request->file('photo_id')){
+            $name = time() . $file->getClientOriginalName();
+            $file->move('images', $name);
+            $photo = Photo::create(['file'=>$name]);
+            $input['photo_id'] = $photo->id;
+        }
+        $team->update($input);
+
+        return redirect('/admin/teams');
     }
 
     /**
@@ -80,5 +113,8 @@ class AdminTeamsController extends Controller
     public function destroy($id)
     {
         //
+        Team::findOrFail($id)->delete();
+        return redirect('/admin/teams');
+
     }
 }
