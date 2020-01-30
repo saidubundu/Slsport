@@ -175,7 +175,7 @@
             </li>
           </ul>
           <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
-          <span class="mdi mdi-menu"></span>
+          <span class="mdi mdi-menu">Menu</span>
           </button>
         </div>
       </nav>
@@ -363,20 +363,20 @@
           <li class="nav-item nav-profile">
             <div class="nav-link d-flex">
               <div class="profile-image">
-                <img src="../../images/faces/face28.png" alt="image">
+                <img src="{{ Auth::user()->photo ? Auth::user()->photo->file : 'No user photo'}}" alt="image">
               </div>
               <div class="profile-name">
                 <p class="name">
-                  Edwin Harring
+                    {{ Auth::user()->name }}
                 </p>
                 <p class="designation">
-                  Manager
+                    {{ Auth::user()->role->name }}
                 </p>
               </div>
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="index.html">
+            <a class="nav-link" href="/admin">
             <i class="mdi mdi-shield-check menu-icon"></i>
             <span class="menu-title">Dashboard</span>
             </a>
@@ -408,8 +408,8 @@
             </a>
             <div class="collapse" id="ui-advanced">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/dragula.html">All posts</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/clipboard.html">Create post</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{route('posts.index')}}">All posts</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{route('posts.create')}}">Create post</a></li>
               </ul>
             </div>
           </li>
