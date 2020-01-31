@@ -21,4 +21,9 @@ class Team extends Model
     {
         return $this->belongsTo('App\Photo');
     }
+
+    public function player()
+    {
+        return $this->hasMany('App\Player');
+    }
 }

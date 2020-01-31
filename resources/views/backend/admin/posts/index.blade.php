@@ -2,6 +2,7 @@
 
 @section('content')
     <h1>All Posts</h1>
+    <br>
 @if($posts)
     <table class="table">
         <thead class="thead-dark">

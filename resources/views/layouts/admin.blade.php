@@ -434,8 +434,8 @@
             </a>
             <div class="collapse" id="editors">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"><a class="nav-link" href="pages/forms/text_editor.html">All players</a></li>
-                <li class="nav-item"><a class="nav-link" href="pages/forms/code_editor.html">Create player</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{route('players.index')}}">All players</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{route('players.create')}}">Create player</a></li>
               </ul>
             </div>
           </li>

@@ -4,7 +4,7 @@
 
     <h1>All Teams</h1>
 
-
+    <br>
         <table class="table">
 
             <thead class="thead-dark">
