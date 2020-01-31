@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Photo;
 use App\Player;
+use App\Position;
 use App\Team;
 use Illuminate\Http\Request;
 
@@ -30,8 +31,8 @@ class AdminPlayersController extends Controller
     {
         //
         $teams = Team::pluck('name', 'id')->all();
-
-        return view('backend.admin.players.create',compact('teams'));
+        $positions = Position::pluck('name','id')->all();
+        return view('backend.admin.players.create',compact('teams','positions'));
     }
 
     /**
@@ -80,8 +81,9 @@ class AdminPlayersController extends Controller
         //
         $players = Player::findOrFail($id);
         $teams = Team::pluck('name','id')->all();
+        $positions = Position::pluck('name','id')->all();
 
-        return view('backend.admin.players.edit', compact('players', 'teams'));
+        return view('backend.admin.players.edit', compact('players', 'teams', 'positions'));
     }
 
     /**

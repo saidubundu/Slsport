@@ -15,7 +15,8 @@ class Player extends Model
         'nation',
         'height',
         'weight',
-        'bio'
+        'bio',
+        'position_id',
     ];
 
     public function statistic()
@@ -31,5 +32,10 @@ class Player extends Model
     public function team()
     {
         return $this->belongsTo('App\Team');
+    }
+
+    public function position()
+    {
+        return $this->belongsTo('App\Position');
     }
 }

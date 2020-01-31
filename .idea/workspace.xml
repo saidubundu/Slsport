@@ -2,29 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="caff5bcc-a418-4fbf-b6a6-9c49ce0b5e78" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminPlayersController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Player.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Statistic.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_01_31_094423_create_players_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_01_31_181150_create_statistics_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/1580472439saidu.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/1580472574vattenfarg_splash_large.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/1580472722realmadrid.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/1580495144alves.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/15804959731.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/15804959951.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/15804965523.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/15804969321.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/15804990892.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Position.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_01_31_210321_create_positions_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/1580503468saidu.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/1580503635pexels-photo-247791.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/1580503795realmadrid.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/1580506571getafe.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/backend/admin/result/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/backend/admin/result/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/backend/admin/result/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/backend/admin/table/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/backend/admin/table/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/backend/admin/table/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Team.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Team.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminPlayersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminPlayersController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Player.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Player.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_01_30_083033_create_posts_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_01_30_083033_create_posts_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_01_31_094423_create_players_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_01_31_094423_create_players_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_01_31_181150_create_statistics_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_01_31_181150_create_statistics_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/backend/admin/players/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/admin/players/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/backend/admin/players/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/admin/players/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/admin/players/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/admin/players/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/admin/posts/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/admin/posts/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/admin/teams/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/admin/teams/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,13 +147,13 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/backend/admin" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\SlSport\public\images" />
       <recent name="C:\xampp\htdocs\SlSport\resources\views\backend\admin" />
+      <recent name="C:\xampp\htdocs\SlSport\public\images" />
       <recent name="C:\xampp\htdocs\SlSport\public\images\holder" />
       <recent name="C:\xampp\htdocs\SlSport\public\fonts" />
       <recent name="C:\xampp\htdocs\SlSport\public" />
@@ -193,7 +190,7 @@
       <workItem from="1580324215601" duration="19078000" />
       <workItem from="1580370400608" duration="10334000" />
       <workItem from="1580382655352" duration="28815000" />
-      <workItem from="1580463761323" duration="12725000" />
+      <workItem from="1580463761323" duration="17904000" />
     </task>
     <servers />
   </component>

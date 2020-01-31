@@ -17,6 +17,11 @@
         </div>
 
         <div class="form-group col-md-6">
+            {!! Form::label('position_id', 'Position:') !!}
+            {!! Form::select('position_id',[''=>'Choose position:'] + $positions, null, ['class'=>'form-control']) !!}
+        </div>
+
+        <div class="form-group col-md-6">
             {!! Form::label('nation', 'Nationality') !!}
             {!! Form::text('nation', null, ['class'=>'form-control']) !!}
         </div>

@@ -12,6 +12,7 @@
             <th scope="col">Photo</th>
             <th scope="col">Name</th>
             <th scope="col">Jersey No.</th>
+            <th scope="col">Position</th>
             <th scope="col">Nationality</th>
             <th scope="col">Height</th>
             <th scope="col">Weight</th>
@@ -28,6 +29,7 @@
             <td><img src="{{$player->photo_id ? $player->photo->file : '/images/holder/profile.png'}}" alt=""></td>
             <td>{{$player->name}}</td>
             <td>{{$player->jersey}}</td>
+            <td>{{$player->position->name}}</td>
             <td>{{$player->nation}}</td>
             <td>{{$player->height}}</td>
             <td>{{$player->weight}}</td>

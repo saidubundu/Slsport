@@ -15,7 +15,7 @@ class CreateStatisticsTable extends Migration
     {
         Schema::create('statistics', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('player_id');
+            $table->bigInteger('player_id')->unsigned()->index();
             $table->string('season');
             $table->string('club');
             $table->string('goal');
@@ -23,6 +23,8 @@ class CreateStatisticsTable extends Migration
             $table->string('yellow');
             $table->string('red');
             $table->timestamps();
+
+            $table->foreign('player_id')->references('id')->on('players')->onDelete('cascade');
         });
     }
 
