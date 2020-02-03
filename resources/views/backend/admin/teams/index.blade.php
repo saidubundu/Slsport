@@ -39,7 +39,7 @@
                     {!! Form::open(['method'=>'DELETE', 'action'=> ['AdminTeamsController@destroy', $team->id]]) !!}
 
                     <div>
-                        {!! Form::submit('Delete', ['class="btn btn-outline-danger" col-sm-3']) !!}
+                        {!! Form::submit('Delete team', ['class="btn btn-outline-danger" col-sm-3']) !!}
                     </div>
                     {!! Form::close() !!}
 

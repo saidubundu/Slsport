@@ -26,4 +26,12 @@ class Team extends Model
     {
         return $this->hasMany('App\Player');
     }
+
+    public function statistic()
+    {
+        return $this->belongsTo('App\Statistic');
+    }
+
+
+
 }

@@ -52,8 +52,9 @@
 
     </div>
 
+
     <div class="form-group">
-        {!! Form::submit('Create Player', ['class'=>'btn btn-primary']) !!}
+        {!! Form::submit('Create Player', ['class'=>'btn btn-primary col-md-12']) !!}
     </div>
 
     {!! Form::close() !!}

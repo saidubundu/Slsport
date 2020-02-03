@@ -2,14 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Photo;
-use App\Player;
-use App\Position;
-use App\Statistic;
+use App\Fixture;
 use App\Team;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
-class AdminPlayersController extends Controller
+class AdminFixturesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,8 +17,9 @@ class AdminPlayersController extends Controller
     public function index()
     {
         //
-        $players = Player::all();
-        return view('backend.admin.players.index',compact('players'));
+        $fixtures = Fixture::all();
+
+        return view('backend.admin.fixtures.index', compact('fixtures'));
     }
 
     /**
@@ -32,8 +31,8 @@ class AdminPlayersController extends Controller
     {
         //
         $teams = Team::pluck('name', 'id')->all();
-        $positions = Position::pluck('name','id')->all();
-        return view('backend.admin.players.create',compact('teams','positions'));
+
+        return view('backend.admin.fixtures.create', compact('teams'));
     }
 
     /**
@@ -45,19 +44,10 @@ class AdminPlayersController extends Controller
     public function store(Request $request)
     {
         //
-      $input = $request->all();
-        if ($file = $request->file('photo_id')){
-            $name = time() . $file->getClientOriginalName();
+        Fixture::create($request->all());
 
-            $file->move('images' , $name);
 
-            $photo = Photo::create(['file'=>$name]);
-
-            $input['photo_id'] = $photo->id;
-        }
-        Player::create($input);
-
-        return redirect('/admin/players');
+        return redirect('/admin/fixtures');
     }
 
     /**
@@ -80,11 +70,10 @@ class AdminPlayersController extends Controller
     public function edit($id)
     {
         //
-        $players = Player::findOrFail($id);
-        $teams = Team::pluck('name','id')->all();
-        $positions = Position::pluck('name','id')->all();
+        $fixtures = Fixture::findOrFail($id);
+        $teams = Team::pluck('name', 'id')->all();
 
-        return view('backend.admin.players.edit', compact('players', 'teams', 'positions'));
+        return view('backend.admin.fixtures.edit', compact('teams','fixtures'));
     }
 
     /**
@@ -97,23 +86,10 @@ class AdminPlayersController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $players = Player::findOrFail($id);
+        $fixtures = Fixture::findOrFail($id);
+        $fixtures->update($request->all());
 
-          $input = $request->all();
-
-        if ($file = $request->file('photo_id')){
-            $name = time() . $file->getClientOriginalName();
-
-            $file->move('images' , $name);
-
-            $photo = Photo::create(['file'=>$name]);
-
-            $input['photo_id'] = $photo->id;
-        }
-
-        $players->update($input);
-        return redirect('/admin/players');
-
+        return redirect('/admin/fixtures');
     }
 
     /**
@@ -125,7 +101,7 @@ class AdminPlayersController extends Controller
     public function destroy($id)
     {
         //
-        Player::findOrFail($id)->delete();
-        return redirect('/admin/players');
+        Fixture::findOrFail($id)->delete();
+        return  redirect('/admin/fixtures');
     }
 }

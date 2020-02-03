@@ -12,13 +12,14 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/app.js', 'public/js')
-   .sass('resources/sass/app.scss', 'public/css');
+   .sass('resources/sass/app.scss', 'resources/sass/_bootstrap-datetimepicker.scss','public/css');
 
 mix.styles([
 
     'resources/css/fontawesome.css',
     'resources/css/vendor.bundle.base.css',
     'resources/css/bootstrap.css',
+    'resources/css/datepicker.css',
     'resources/css/style.css',
 
 
@@ -31,6 +32,8 @@ mix.scripts([
     'resources/js/libs/bootstrap.js',
     'resources/js/libs/off-canvas.js',
     'resources/js/libs/hoverable-collapse.js',
+    'resources/js/libs/datepicker.js',
+    'resources/js/libs/datepicker.en.js',
     'resources/js/libs/template.js',
     'resources/js/libs/settings.js',
     'resources/js/libs/dashboard.js',

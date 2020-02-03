@@ -2,14 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Photo;
-use App\Player;
-use App\Position;
-use App\Statistic;
+use App\Standing;
 use App\Team;
 use Illuminate\Http\Request;
 
-class AdminPlayersController extends Controller
+class AdminTablesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,8 +16,8 @@ class AdminPlayersController extends Controller
     public function index()
     {
         //
-        $players = Player::all();
-        return view('backend.admin.players.index',compact('players'));
+        $standings = Standing::all();
+        return view('backend.admin.table.index', compact('standings'));
     }
 
     /**
@@ -32,8 +29,7 @@ class AdminPlayersController extends Controller
     {
         //
         $teams = Team::pluck('name', 'id')->all();
-        $positions = Position::pluck('name','id')->all();
-        return view('backend.admin.players.create',compact('teams','positions'));
+        return view('backend.admin.table.create', compact('teams'));
     }
 
     /**
@@ -45,19 +41,9 @@ class AdminPlayersController extends Controller
     public function store(Request $request)
     {
         //
-      $input = $request->all();
-        if ($file = $request->file('photo_id')){
-            $name = time() . $file->getClientOriginalName();
+        Standing::create($request->all());
 
-            $file->move('images' , $name);
-
-            $photo = Photo::create(['file'=>$name]);
-
-            $input['photo_id'] = $photo->id;
-        }
-        Player::create($input);
-
-        return redirect('/admin/players');
+        return redirect('/admin/tables');
     }
 
     /**
@@ -80,11 +66,9 @@ class AdminPlayersController extends Controller
     public function edit($id)
     {
         //
-        $players = Player::findOrFail($id);
-        $teams = Team::pluck('name','id')->all();
-        $positions = Position::pluck('name','id')->all();
-
-        return view('backend.admin.players.edit', compact('players', 'teams', 'positions'));
+        $standings = Standing::findOrFail($id);
+        $teams = Team::pluck('name', 'id')->all();
+        return view('backend.admin.table.edit', compact('standings','teams'));
     }
 
     /**
@@ -97,23 +81,10 @@ class AdminPlayersController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $players = Player::findOrFail($id);
+        $standings = Standing::findOrFail($id);
+        $standings->update($request->all());
 
-          $input = $request->all();
-
-        if ($file = $request->file('photo_id')){
-            $name = time() . $file->getClientOriginalName();
-
-            $file->move('images' , $name);
-
-            $photo = Photo::create(['file'=>$name]);
-
-            $input['photo_id'] = $photo->id;
-        }
-
-        $players->update($input);
-        return redirect('/admin/players');
-
+        return redirect('/admin/tables');
     }
 
     /**
@@ -125,7 +96,7 @@ class AdminPlayersController extends Controller
     public function destroy($id)
     {
         //
-        Player::findOrFail($id)->delete();
-        return redirect('/admin/players');
+        Standing::findOrFail($id)->delete();
+        return redirect('/admin/tables');
     }
 }

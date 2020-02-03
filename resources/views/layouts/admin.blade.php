@@ -11,6 +11,7 @@
 
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/libs.css') }}" rel="stylesheet">
+
 	</head>
 	<body>
 		<div class="container-scroller">
@@ -442,19 +443,13 @@
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
             <i class="mdi mdi-signal menu-icon"></i>
-            <span class="menu-title">Charts</span>
+            <span class="menu-title">Fixture</span>
             <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="charts">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/charts/chartjs.html">ChartJs</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/charts/morris.html">Morris</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/charts/flot-chart.html">Flot</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/charts/google-charts.html">Google charts</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/charts/sparkline.html">Sparkline js</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/charts/c3.html">C3 charts</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/charts/chartist.html">Chartists</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/charts/justGage.html">JustGage</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{route('fixtures.index')}}">All fixture</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{route('fixtures.create')}}">Create fixture</a></li>
               </ul>
             </div>
           </li>
@@ -466,10 +461,8 @@
             </a>
             <div class="collapse" id="tables">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/tables/basic-table.html">Basic table</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/tables/data-table.html">Data table</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/tables/js-grid.html">Js-grid</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/tables/sortable-table.html">Sortable table</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{route('tables.index')}}">All table</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{route('tables.create')}}">Create table</a></li>
               </ul>
             </div>
           </li>
