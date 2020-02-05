@@ -11,6 +11,7 @@
 
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/libs.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 	</head>
 	<body>
@@ -18,10 +19,10 @@
 			<!-- partial:partials/_navbar.html -->
 			<nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
         <div class="text-left navbar-brand-wrapper d-flex align-items-center justify-content-between">
-          <a class="navbar-brand brand-logo" href="index.html"><img src="http://www.urbanui.com/hiliteui/template/images/logo.svg" alt="logo"/></a>
-          <a class="navbar-brand brand-logo-mini" href="index.html"><img src="http://www.urbanui.com/hiliteui/template/images/logo-mini.svg" alt="logo"/></a>
+          <a class="navbar-brand brand-logo" href="index.html">logo</a>
+          <a class="navbar-brand brand-logo-mini" href="index.html">logo</a>
           <button class="navbar-toggler align-self-center" type="button" data-toggle="minimize">
-          <span class="mdi mdi-menu"></span>
+          <span class="far fa-camera"></span>
           </button>
         </div>
         <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
@@ -166,7 +167,7 @@
 {{--            </li>--}}
             <li class="nav-item nav-user-icon">
               <a class="nav-link" href="#">
-              <img src="../../images/faces/face28.jpg" alt="profile"/>
+              <img src="{{ Auth::user()->photo ? Auth::user()->photo->file : 'No user photo'}}" alt="profile"/>
               </a>
             </li>
             <li class="nav-item nav-settings d-none d-lg-flex">
@@ -176,7 +177,7 @@
             </li>
           </ul>
           <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
-          <span class="mdi mdi-menu">Menu</span>
+          <span class="fa-address-book">menu</span>
           </button>
         </div>
       </nav>
@@ -390,7 +391,7 @@
 {{--          </li>--}}
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-            <i class="fas fa-camera"></i>
+            <i class="fa-address-book"></i>
             <span class="menu-title">Users</span>
             <i class="menu-arrow"></i>
             </a>
@@ -467,44 +468,27 @@
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="pages/ui-features/popups.html">
-            <i class="mdi mdi-drawing-box menu-icon"></i>
-            <span class="menu-title">Popups</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="pages/ui-features/notifications.html">
-            <i class="mdi mdi-bell menu-icon"></i>
-            <span class="menu-title">Notifications</span>
-            </a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#icons" aria-expanded="false" aria-controls="icons">
             <i class="mdi mdi-emoticon-excited-outline menu-icon"></i>
-            <span class="menu-title">Icons</span>
+            <span class="menu-title">Results</span>
             <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="icons">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/icons/flag-icons.html">Flag icons</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/icons/mdi.html">Mdi icons</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/icons/font-awesome.html">Font Awesome</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/icons/simple-line-icon.html">Simple line icons</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/icons/themify.html">Themify icons</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{route('results.index')}}">All results</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{route('results.create')}}">Create result</a></li>
               </ul>
             </div>
           </li>
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#maps" aria-expanded="false" aria-controls="maps">
             <i class="mdi mdi-map menu-icon"></i>
-            <span class="menu-title">Maps</span>
+            <span class="menu-title">LiveScores</span>
             <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="maps">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/maps/mapael.html">Mapael</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/maps/vector-map.html">Vector Map</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/maps/google-maps.html">Google Map</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{route('games.index')}}">All scores</a></li>
               </ul>
             </div>
           </li>

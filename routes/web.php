@@ -29,3 +29,5 @@ Route::resource('admin/teams', 'AdminTeamsController');
 Route::resource('admin/players', 'AdminPlayersController');
 Route::resource('admin/fixtures', 'AdminFixturesController');
 Route::resource('admin/tables', 'AdminTablesController');
+Route::resource('admin/results', 'AdminResultsController');
+Route::resource('admin/games', 'AdminGamesController');
