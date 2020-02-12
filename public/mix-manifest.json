@@ -1,6 +1,9 @@
 {
     "/js/app.js": "/js/app.js",
     "/resources/sass/_bootstrap-datetimepicker.scss": "/resources/sass/_bootstrap-datetimepicker.scss",
-    "/css/libs.css": "/css/libs.css",
-    "/js/libs.js": "/js/libs.js"
+    "/css/front.css": "/css/front.css",
+    "/css/admin.css": "/css/admin.css",
+    "/js/libs.js": "/js/libs.js",
+    "/js/admin.js": "/js/admin.js",
+    "/js/front.js": "/js/front.js"
 }

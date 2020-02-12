@@ -17,7 +17,6 @@ class CreateStatisticsTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('player_id')->unsigned()->index();
             $table->string('season');
-            $table->string('club');
             $table->string('goal');
             $table->string('assist');
             $table->string('yellow');

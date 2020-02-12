@@ -69,6 +69,9 @@ class AdminPlayersController extends Controller
     public function show($id)
     {
         //
+        $players = Player::findOrFail($id);
+
+        return view('backend.admin.players.show', compact('players'));
     }
 
     /**
@@ -83,7 +86,6 @@ class AdminPlayersController extends Controller
         $players = Player::findOrFail($id);
         $teams = Team::pluck('name','id')->all();
         $positions = Position::pluck('name','id')->all();
-
         return view('backend.admin.players.edit', compact('players', 'teams', 'positions'));
     }
 

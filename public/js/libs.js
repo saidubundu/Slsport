@@ -6838,7 +6838,7 @@
     function addActiveClass(element) {
       if (current === "") {
         //for root url
-        if (element.attr('href').indexOf("index.html") !== -1) {
+        if (element.attr('href').indexOf("admin.blade.php") !== -1) {
           element.parents('.nav-item').last().addClass('active');
           if (element.parents('.sub-menu').length) {
             element.closest('.collapse').addClass('show');
@@ -6921,7 +6921,7 @@
           navItemClicked.removeClass('show-submenu');
         }
         $(this).toggleClass('show-submenu');
-      }        
+      }
     })
 
     $(window).scroll(function() {
@@ -6936,6 +6936,7 @@
     });
   });
 })(jQuery);
+
 (function($) {
   'use strict';
   $(function() {

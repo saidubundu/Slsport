@@ -15,6 +15,7 @@ class Team extends Model
         'coach',
         'training_ground',
         'leagues',
+        'initials',
     ];
 
     public function photo()

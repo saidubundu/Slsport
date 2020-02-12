@@ -19,7 +19,7 @@ class AdminPostsController extends Controller
     public function index()
     {
         //
-        $posts = Post::all();
+        $posts = Post::latest()->paginate(4);
         return view('backend.admin.posts.index', compact('posts'));
     }
 
@@ -105,7 +105,7 @@ class AdminPostsController extends Controller
             $name = time() . $file->getClientOriginalName();
             $file->move('images', $name);
             $photo = Photo::create(['file'=>$name]);
-            
+
             $input['photo_id'] = $photo->id;
         }
 

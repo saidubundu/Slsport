@@ -10,7 +10,6 @@ class Statistic extends Model
     protected $fillable = [
         'player_id',
         'season',
-        'club',
         'goal',
         'assist',
         'yellow',

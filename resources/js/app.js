@@ -31,3 +31,8 @@ const app = new Vue({
     el: '#app',
 });
 
+$('#minDate').datepicker({
+    language: 'en',
+    minDate: new Date() // Now can
+})
+

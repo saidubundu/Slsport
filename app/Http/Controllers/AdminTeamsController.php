@@ -65,6 +65,8 @@ class AdminTeamsController extends Controller
     public function show($id)
     {
         //
+        $team = Team::findOrFail($id);
+        return view('backend.admin.teams.show', compact('team'));
     }
 
     /**

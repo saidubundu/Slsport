@@ -6,6 +6,7 @@ use App\Http\Requests\UsersEditRequest;
 use App\Http\Requests\UsersRequest;
 use App\Photo;
 use App\Role;
+use Illuminate\Support\Facades\Gate;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
@@ -99,6 +100,10 @@ class AdminUsersController extends Controller
     public function edit($id)
     {
         //
+        if (Gate::denies('edit-users')){
+            return redirect('/admin/users');
+        }
+
         $user = User::findOrFail($id);
         $roles = Role::pluck('name', 'id')->all();
         return view('backend.admin.user.edit',compact('user','roles'));
@@ -146,6 +151,9 @@ class AdminUsersController extends Controller
     public function destroy($id)
     {
         //
+        if (Gate::denies('delete-users')){
+            return redirect('/admin/users');
+        }
         $user = User::findOrFail($id);
 
         unlink(public_path(). $user->photo->file);
