@@ -3,17 +3,21 @@
 namespace App\Providers;
 
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
+use Illuminate\Contracts\Auth\Access\Gate as GateContact;
 
 class AuthServiceProvider extends ServiceProvider
 {
+
+
     /**
      * The policy mappings for the application.
      *
      * @var array
      */
     protected $policies = [
-        // 'App\Model' => 'App\Policies\ModelPolicy',
+        'App\Model' => 'App\Policies\ModelPolicy',
     ];
 
     /**
@@ -21,18 +25,21 @@ class AuthServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
+    public function boot(GateContact $gate)
     {
-        $this->registerPolicies();
 
-        Gate::define('edit-users', function ($user){
-            return $user->hasRole('Admin');
-        });
+        $this->registerPolicies($gate);
 
-        Gate::define('delete-users', function ($user){
-            return $user->hasRole('Admin');
-        });
+            $gate->define('isAdmin', function ($user) {
+                return $user->role_id == '1';
+            });
 
-        //
+            $gate->define('isModerator', function ($user) {
+                return $user->role_id == '2';
+            });
+
+            $gate->define('isEditor', function ($user) {
+                return $user->roles == 'Editor';
+            });
     }
 }

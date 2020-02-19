@@ -50,6 +50,23 @@
         </div>
 
         <div class="card-body">
+            @if(Session::has('created_game'))
+                <div class="alert alert-primary" role="alert">
+                    {{session('created_game')}}
+                </div>
+            @endif
+
+            @if(Session::has('updated_game'))
+                <div class="alert alert-success" role="alert">
+                    {{session('updated_game')}}
+                </div>
+            @endif
+
+            @if(Session::has('deleted_game'))
+                <div class="alert alert-danger" role="alert">
+                    {{session('deleted_game')}}
+                </div>
+            @endif
             <div class="form-rows">
                 @if($scores)
 

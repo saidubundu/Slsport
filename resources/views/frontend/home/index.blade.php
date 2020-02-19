@@ -27,7 +27,7 @@
                 @endforeach
         </div>
         <div class="score-content">
-            <h2>2018 fifa <br> worldcup russia</h2>
+            <h2>{{\Carbon\Carbon::now()->year}} Sierra Leone <br> Premiere League</h2>
             <div class="upcoming">
                 <span class="is-countdown"> </span>
                 <div data-countdown="2018/09/01"></div>
@@ -51,7 +51,7 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="highlights-bg h-bg1 mini-bg overlay mt20">
-                                            <a class="mfp-iframe video-play-btn" href="https://www.youtube.com/watch?v=Kbg777rhMrA"><i class="fa fa-play"></i> <span></span></a>
+                                            <a class="mfp-iframe video-play-btn" href="https://www.youtube.com/watch?v=pZexlSaNvP0"><i class="fa fa-play"></i> <span></span></a>
                                             <p>liverpool 2-0 man city</p>
                                         </div>
                                     </div>
@@ -68,35 +68,35 @@
                             @include('frontend.partials.upcoming')
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="bnr-img mt30 zoom">
-                                <img class="full-width" src="{{asset('image/bg-banner/bnr2.png')}}" alt="banner img">
+{{--                    <div class="row">--}}
+{{--                        <div class="col-md-12">--}}
+{{--                            <div class="bnr-img mt30 zoom">--}}
+{{--                                <img class="full-width" src="{{asset('image/bg-banner/bnr2.png')}}" alt="banner img">--}}
 
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="banner-box mt30">
-                                <div class="banner-img overlay">
-                                    <img class="full-width" src="{{asset('image/bg-banner/1.png')}}" alt="banner-img">
-                                    <p>philipe</p>
-                                    <h4><a href="#">liverpool win Pl<br> Aisa trophy</a> </h4>
-                                </div>
-                                <div class="banner-img overlay">
-                                    <img class="full-width" src="assets/images/bg-banner/2.png" alt="banner-img">
-                                    <p>football</p>
-                                    <h4><a href="#">Mesut Ozil back in <br> Arsenal training.</a></h4>
-                                </div>
-                                <div class="banner-img overlay">
-                                    <img class="full-width" src="assets/images/bg-banner/3.png" alt="banner-img">
-                                    <p>26.07.17</p>
-                                    <h4><a href="#">Euro Papers: Messi <br> wants Dybala</a></h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                    <div class="row">--}}
+{{--                        <div class="col-md-12">--}}
+{{--                            <div class="banner-box mt30">--}}
+{{--                                <div class="banner-img overlay">--}}
+{{--                                    <img class="full-width" src="{{asset('image/bg-banner/1.png')}}" alt="banner-img">--}}
+{{--                                    <p>philipe</p>--}}
+{{--                                    <h4><a href="#">liverpool win Pl<br> Aisa trophy</a> </h4>--}}
+{{--                                </div>--}}
+{{--                                <div class="banner-img overlay">--}}
+{{--                                    <img class="full-width" src="assets/images/bg-banner/2.png" alt="banner-img">--}}
+{{--                                    <p>football</p>--}}
+{{--                                    <h4><a href="#">Mesut Ozil back in <br> Arsenal training.</a></h4>--}}
+{{--                                </div>--}}
+{{--                                <div class="banner-img overlay">--}}
+{{--                                    <img class="full-width" src="assets/images/bg-banner/3.png" alt="banner-img">--}}
+{{--                                    <p>26.07.17</p>--}}
+{{--                                    <h4><a href="#">Euro Papers: Messi <br> wants Dybala</a></h4>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
                     @include('frontend.partials.post')
                     <div class="sport-section pad60">
                         <div class="section-title">
@@ -128,12 +128,8 @@
                     </div>
                 </div>
                 <div class="col-md-12 col-lg-3">
-                    <div class="section-title">
-                        <h4> <span>recent results</span></h4>
-                    </div>
-                    <div class="score-slider owl-carousel bnr1 mini-bg mt40">
                     @include('frontend.partials.results')
-                    </div>
+
                     <div class="bnr-img mt30 zoom">
                         <img class="full-width" src="{{asset('image/bg-banner/bnr1.jpg')}}" alt="banner img">
                     </div>
@@ -178,7 +174,7 @@
                 </div>
                 <div class="col-md-12 col-lg-3">
                     <div class="section-title xs-mt-50">
-                        <h4> <span>twitter feed</span></h4>
+                        <h4> <span>Text Ads</span></h4>
                     </div>
                     <div class="twit-area mt40">
                         <div class="twit-box">
@@ -234,25 +230,25 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-lg-5">
-                    <div class="football-gallery">
-                        <div class="section-title">
-                            <h4><span>football gallery</span></h4>
-                        </div>
-                        <div class="gallery-slider owl-carousel owl-loaded mt40">
-                            <div class="gallery-img">
-                                <img class="img-fluid" src="{{asset('image/gallery/1.jpg')}}" alt="gallery img">
-                            </div>
-                            <div class="gallery-img">
-                                <img class="img-fluid" src="assets/images/gallery/2.jpg" alt="gallery img">
-                            </div>
-                            <div class="gallery-img">
-                                <img class="img-fluid" src="assets/images/gallery/3.jpg" alt="gallery img">
-                            </div>
-                            <div class="gallery-img">
-                                <img class="img-fluid" src="assets/images/gallery/4.jpg" alt="gallery img">
-                            </div>
-                        </div>
-                    </div>
+{{--                    <div class="football-gallery">--}}
+{{--                        <div class="section-title">--}}
+{{--                            <h4><span>football gallery</span></h4>--}}
+{{--                        </div>--}}
+{{--                        <div class="gallery-slider owl-carousel owl-loaded mt40">--}}
+{{--                            <div class="gallery-img">--}}
+{{--                                <img class="img-fluid" src="{{asset('image/gallery/n1.jpg')}}" alt="gallery img">--}}
+{{--                            </div>--}}
+{{--                            <div class="gallery-img">--}}
+{{--                                <img class="img-fluid" src="assets/images/gallery/2.jpg" alt="gallery img">--}}
+{{--                            </div>--}}
+{{--                            <div class="gallery-img">--}}
+{{--                                <img class="img-fluid" src="assets/images/gallery/3.jpg" alt="gallery img">--}}
+{{--                            </div>--}}
+{{--                            <div class="gallery-img">--}}
+{{--                                <img class="img-fluid" src="assets/images/gallery/4.jpg" alt="gallery img">--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
                 </div>
                 <div class="col-md-12 col-lg-4">
                     <div class="section-title xs-mt-90 ">
@@ -289,7 +285,7 @@
                 </div>
                 <div class="col-md-12 col-lg-3">
                     <div class="bnr-img mt60 zoom">
-                        <img class="full-width" src="assets/images/bg-banner/bnr8.jpg" alt="banner img">
+                        <img class="full-width" src="{{asset('image/bg-banner/bnr8.jpg')}}" alt="banner img">
                     </div>
                 </div>
             </div>

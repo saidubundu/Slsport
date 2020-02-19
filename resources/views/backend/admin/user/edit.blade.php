@@ -19,7 +19,7 @@
             {!! Form::label('email', 'Email:') !!}
             {!! Form::email('email', null, ['class'=>'form-control']) !!}
         </div>
-
+        @canany('isAdmin')
         <div class="form-group col-md-6">
             {!! Form::label('role_id', 'Role:') !!}
             {!! Form::select('role_id',['' => 'Choose role'] + $roles, null, ['class'=>'form-control']) !!}
@@ -29,7 +29,7 @@
             {!! Form::label('is_active', 'Status:') !!}
             {!! Form::select('is_active',array(1 => 'Active', 0 => 'Not Active'), null, ['class'=>'form-control']) !!}
         </div>
-
+    @endcan
         <div class="form-group col-md-6">
             {!! Form::label('password', 'Password:') !!}
             {!! Form::password('password', ['class'=>'form-control']) !!}

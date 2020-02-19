@@ -41,7 +41,7 @@
                             <h3>{{$post->title}}</h3>
                             <p>By <span>{{$post->user->name}}</span> / {{$post->created_at->diffForHumans()}} / 3 Comments / Categories: <span>{{$post->category->name}}</span></p>
                         </div>
-                        <p>{{$post->excerpt}}</p>
+                        <p>{!!$post->excerpt!!}</p>
                         <div class="news-btn mt40">
                             <a href="{{route('post.show',$post->slug)}}">read more</a>
                         </div>

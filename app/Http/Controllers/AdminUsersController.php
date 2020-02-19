@@ -100,8 +100,8 @@ class AdminUsersController extends Controller
     public function edit($id)
     {
         //
-        if (Gate::denies('edit-users')){
-            return redirect('/admin/users');
+        if (!Gate::allows('isAdmin') && !Gate::allows('isModerator')){
+           return 'Sorry u donot have permission';
         }
 
         $user = User::findOrFail($id);

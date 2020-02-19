@@ -5,11 +5,28 @@
         <div class="card-head">
             <header>All Posts</header>
             <div class="tools">
-                <a  href="{{route('posts.create')}}"> <i class="material-icons">add</i> Add Post</a>
+                <a  href="{{route('posts.create')}}"><i class="fa fa-plus"></i>Add new post</a>
             </div>
         </div>
 
         <div class="card-body">
+            @if(Session::has('created_post'))
+                <div class="alert alert-primary" role="alert">
+                    {{session('created_post')}}
+                </div>
+            @endif
+
+            @if(Session::has('updated_post'))
+                <div class="alert alert-success" role="alert">
+                    {{session('updated_post')}}
+                </div>
+            @endif
+
+            @if(Session::has('deleted_post'))
+                <div class="alert alert-danger" role="alert">
+                    {{session('deleted_post')}}
+                </div>
+            @endif
 
             @if($posts)
                 <table class="table">

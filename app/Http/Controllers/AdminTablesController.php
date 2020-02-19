@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Standing;
 use App\Team;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class AdminTablesController extends Controller
 {
@@ -42,7 +43,7 @@ class AdminTablesController extends Controller
     {
         //
         Standing::create($request->all());
-
+        Session::flash('created_table', 'Table successfully created');
         return redirect('/admin/tables');
     }
 
@@ -83,7 +84,7 @@ class AdminTablesController extends Controller
         //
         $standings = Standing::findOrFail($id);
         $standings->update($request->all());
-
+        Session::flash('updated_table', 'Table updated successfully');
         return redirect('/admin/tables');
     }
 
@@ -97,6 +98,7 @@ class AdminTablesController extends Controller
     {
         //
         Standing::findOrFail($id)->delete();
+        Session::flash('deleted_table', 'Table successfully deleted');
         return redirect('/admin/tables');
     }
 }

@@ -6,6 +6,7 @@ use App\Fixture;
 use App\Result;
 use App\Team;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class AdminResultsController extends Controller
 {
@@ -30,7 +31,6 @@ class AdminResultsController extends Controller
     {
         //
         $teams = Team::pluck('name','id')->all();
-
         return view('backend.admin.results.create', compact('teams'));
     }
 
@@ -44,6 +44,7 @@ class AdminResultsController extends Controller
     {
         //
         Result::create($request->all());
+        Session::flash('created_result', 'Result successfully created');
         return redirect('/admin/results');
     }
 
@@ -84,6 +85,7 @@ class AdminResultsController extends Controller
         //
         $results = Result::findOrFail($id);
         $results->update($request->all());
+        Session::flash('updated_result', 'Result updated successfully');
         return redirect('/admin/results');
     }
 
@@ -97,6 +99,7 @@ class AdminResultsController extends Controller
     {
         //
         Result::findOrFail($id)->delete();
+        Session::flash('deleted_result', 'Result successfully deleted');
         return redirect('/admin/results');
     }
 }

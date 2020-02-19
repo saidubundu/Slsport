@@ -14,7 +14,9 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet" type="text/css" />
 	<!-- icons -->
     <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
-	<!-- favicon -->
+    <script src='https://cloud.tinymce.com/stable/tinymce.min.js'></script>
+
+    <!-- favicon -->
     <link rel="shortcut icon" href="assets/img/favicon.ico" />
  </head>
  <!-- END HEAD -->
@@ -219,7 +221,7 @@
  						<!-- start manage user dropdown -->
  						<li class="dropdown dropdown-user">
                             <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-                                <img alt="" class="img-circle " src="{{ Auth::user()->photo ? Auth::user()->photo->file : 'No user photo'}}" />
+                                <img alt="" class="img-circle " src="{{ Auth::user()->photo ? Auth::user()->photo->file : '/images/holder/profile.png'}}" />
                                 <span class="username username-hide-on-mobile"> {{Auth::user()->name}} </span>
                                 <i class="fa fa-angle-down"></i>
                             </a>
@@ -245,8 +247,14 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="login.html">
-                                        <i class="icon-logout"></i> Log Out </a>
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        <i class="icon-logout"></i> {{ __('Logout') }}
+                                    </a>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
                                 </li>
                             </ul>
                         </li>
@@ -316,7 +324,7 @@
 	                        <li class="sidebar-user-panel">
 	                            <div class="user-panel">
 	                                <div class="pull-left image">
-	                                    <img src="{{ Auth::user()->photo ? Auth::user()->photo->file : 'No user photo'}}" class="img-circle user-img-circle" alt="User Image" />
+	                                    <img src="{{ Auth::user()->photo ? Auth::user()->photo->file : '/images/holder/profile.png'}}" class="img-circle user-img-circle" alt="User Image" />
 	                                </div>
 	                                <div class="pull-left info">
 	                                    <p>{{Auth::user()->name}}</p>
@@ -331,11 +339,13 @@
                                 	<span class="selected"></span>
 	                            </a>
 	                        </li>
+                            @canany(['isAdmin','isModerator','isEditor'])
 	                        <li class="nav-item">
 	                            <a href="{{route('users.index')}}" class="nav-link nav-toggle"> <i class="material-icons">account_circle</i>
 	                                <span class="title">Users</span>
 	                            </a>
 	                        </li>
+
 	                        <li class="nav-item">
 	                            <a href="{{route('posts.index')}}" class="nav-link nav-toggle">
 	                                <i class="material-icons">library_books</i>
@@ -378,40 +388,15 @@
 	                            </a>
 
 	                        </li>
+
 	                        <li class="nav-item">
-	                            <a href="javascript:;" class="nav-link nav-toggle">
+	                            <a href="{{route('statistic.index')}}" class="nav-link nav-toggle">
 	                                <i class="material-icons">list</i>
-	                                <span class="title">Data Tables</span>
-	                                <span class="arrow"></span>
+                                    <span class="title">Statistics</span>
 	                            </a>
-	                            <ul class="sub-menu">
-	                                <li class="nav-item">
-	                                    <a href="basic_table.html" class="nav-link ">
-	                                        <span class="title">Basic Tables</span>
-	                                    </a>
-	                                </li>
-	                                <li class="nav-item">
-	                                    <a href="advanced_table.html" class="nav-link ">
-	                                        <span class="title">Advance Tables</span>
-	                                    </a>
-	                                </li>
-	                                <li class="nav-item">
-	                                    <a href="editable_table.html" class="nav-link ">
-	                                        <span class="title">Editable Tables</span>
-	                                    </a>
-	                                </li>
-	                                <li class="nav-item">
-	                                    <a href="group_table.html" class="nav-link ">
-	                                        <span class="title">Grouping</span>
-	                                    </a>
-	                                </li>
-	                                <li class="nav-item">
-	                                    <a href="table_data.html" class="nav-link ">
-	                                        <span class="title">Tables With Sourced Data</span>
-	                                    </a>
-	                                </li>
-	                            </ul>
+
 	                        </li>
+                            @endcanany
 	                        <li class="nav-item">
 	                            <a href="javascript:;" class="nav-link nav-toggle">
 	                                <i class="material-icons">timeline</i>

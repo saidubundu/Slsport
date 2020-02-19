@@ -10,6 +10,23 @@
         </div>
 
         <div class="card-body">
+            @if(Session::has('created_table'))
+                <div class="alert alert-primary" role="alert">
+                    {{session('created_table')}}
+                </div>
+            @endif
+
+            @if(Session::has('updated_table'))
+                <div class="alert alert-success" role="alert">
+                    {{session('updated_table')}}
+                </div>
+            @endif
+
+            @if(Session::has('deleted_table'))
+                <div class="alert alert-danger" role="alert">
+                    {{session('deleted_table')}}
+                </div>
+            @endif
             @if($standings)
                 <table class="table">
                     <thead class="thead-dark">

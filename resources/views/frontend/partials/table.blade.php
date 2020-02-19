@@ -7,8 +7,8 @@
         @foreach($standings as $standing)
         <div class="point-table">
             <div class="team-rank">
-                <img class="sml-logo" src="{{$standing->team->photo->file}}" alt="club-logo">
-                <span>{{$standing->id}}. {{$standing->team->name}}</span>
+                {{$standing->id}}. <img class="sml-logo" src="{{$standing->team->photo->file}}" alt="club-logo">
+                <span> {{$standing->team->name}}</span>
             </div>
             <span>{{$standing->points}}</span>
         </div>

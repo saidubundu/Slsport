@@ -5,11 +5,28 @@
         <div class="card-head">
             <header>All players</header>
             <div class="tools">
-                <a  href="{{route('players.create')}}"><i class="fa fa-plus"></i>Add User</a>
+                <a  href="{{route('players.create')}}"><i class="fa fa-plus"></i>Add new player</a>
             </div>
         </div>
 
         <div class="card-body">
+            @if(Session::has('created_player'))
+                <div class="alert alert-primary" role="alert">
+                    {{session('created_player')}}
+                </div>
+            @endif
+
+            @if(Session::has('updated_player'))
+                <div class="alert alert-success" role="alert">
+                    {{session('updated_player')}}
+                </div>
+            @endif
+
+            @if(Session::has('deleted_player'))
+                <div class="alert alert-danger" role="alert">
+                    {{session('deleted_player')}}
+                </div>
+            @endif
             @if($players)
                 <table class="table">
                     <thead class="thead-dark">

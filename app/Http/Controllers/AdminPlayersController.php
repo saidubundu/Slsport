@@ -8,6 +8,7 @@ use App\Position;
 use App\Statistic;
 use App\Team;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class AdminPlayersController extends Controller
 {
@@ -56,7 +57,7 @@ class AdminPlayersController extends Controller
             $input['photo_id'] = $photo->id;
         }
         Player::create($input);
-
+        Session::flash('created_player', 'Player successfully created');
         return redirect('/admin/players');
     }
 
@@ -69,9 +70,9 @@ class AdminPlayersController extends Controller
     public function show($id)
     {
         //
-        $players = Player::findOrFail($id);
+        $player = Player::findOrFail($id);
 
-        return view('backend.admin.players.show', compact('players'));
+        return view('backend.admin.players.show', compact('player'));
     }
 
     /**
@@ -114,6 +115,7 @@ class AdminPlayersController extends Controller
         }
 
         $players->update($input);
+        Session::flash('updated_player', 'Player updated successfully');
         return redirect('/admin/players');
 
     }
@@ -128,6 +130,7 @@ class AdminPlayersController extends Controller
     {
         //
         Player::findOrFail($id)->delete();
+        Session::flash('deleted_player', 'Player successfully deleted');
         return redirect('/admin/players');
     }
 }

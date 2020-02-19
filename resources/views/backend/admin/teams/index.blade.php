@@ -5,11 +5,28 @@
         <div class="card-head">
             <header>All Teams</header>
             <div class="tools">
-                <a  href="{{route('teams.create')}}"> <i class="material-icons">add</i> Add Post</a>
+                <a  href="{{route('teams.create')}}"><i class="fa fa-plus"></i>Add new team</a>
             </div>
         </div>
 
         <div class="card-body">
+                @if(Session::has('created_team'))
+                    <div class="alert alert-primary" role="alert">
+                        {{session('created_team')}}
+                    </div>
+                @endif
+
+                @if(Session::has('updated_team'))
+                    <div class="alert alert-success" role="alert">
+                        {{session('updated_team')}}
+                    </div>
+                @endif
+
+                @if(Session::has('deleted_team'))
+                    <div class="alert alert-danger" role="alert">
+                        {{session('deleted_team')}}
+                    </div>
+                @endif
             <table class="table">
 
                 <thead class="thead-dark">

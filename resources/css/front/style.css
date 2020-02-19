@@ -662,40 +662,40 @@ h1, h2, h3, h4, .slider-area .sliding-item .league-content .upcomming-match .fir
 
 /* 1.4 Backgrounds */
 .bg1 {
-  background: url("../images/bg/bg1.jpg");
+  background: url("/image/bg/newbg1.jpg");
 }
 
 .bg2 {
-  background: url("../images/bg/bg2.jpg");
+  background: url("/image/bg/newbg2.jpg");
 }
 
 .bg3 {
-  background: url("../images/bg/bg3.jpg");
+  background: url("/image/bg/newbg3.jpg");
 }
 
 .bg4 {
-  background: url("../images/bg/bg4.jpg");
+  background: url("/image/bg/bg4.jpg");
 }
 
 .bnr1 {
-  background: url("image/bg-banner/result.png");
+  background: url("/image/bg-banner/result.png");
 }
 
 /*breadcrumb*/
 .bdcmb-bg1 {
-  background: url("/image/breadcrumb/1.jpg");
+  background: url("/image/breadcrumb/new1.jpg");
 }
 
 .bdcmb-bg2 {
-  background: url("/image/breadcrumb/2.jpg");
+  background: url("/image/breadcrumb/new2.jpg");
 }
 
 .bdcmb-bg3 {
-  background: url("/image/breadcrumb/3.jpg");
+  background: url("/image/breadcrumb/new3.jpg");
 }
 
 .bdcmb-bg4 {
-  background: url("/image/breadcrumb/4.jpg");
+  background: url("/image/breadcrumb/new4.jpg");
 }
 
 /*breadcrumb*/
@@ -705,39 +705,39 @@ h1, h2, h3, h4, .slider-area .sliding-item .league-content .upcomming-match .fir
 }
 
 .h-bg1 {
-  background-image: url(/image/video-img/1.jpg);
+  background-image: url("/image/video-img/1.jpg");
 }
 
 .h-bg2 {
-  background-image: url(/image/video-img/2.jpg);
+  background-image: url("/image/video-img/2.jpg");
 }
 
 .h-bg3 {
-  background-image: url(/image/video-img/3.jpg);
+  background-image: url("/image/video-img/3.jpg");
 }
 
 .h-bg4 {
-  background-image: url(/image/video-img/4.jpg);
+  background-image: url("/image/video-img/4.jpg");
 }
 
 .h-bg5 {
-  background-image: url(/image/video-img/5.jpg);
+  background-image: url("/image/video-img/5.jpg");
 }
 
 .h-bg6 {
-  background-image: url(/image/video-img/6.jpg);
+  background-image: url("/image/video-img/6.jpg");
 }
 
 .h-bg7 {
-  background-image: url(/image/video-img/7.jpg);
+  background-image: url("/image/video-img/7.jpg");
 }
 
 .h-bg8 {
-  background-image: url(/image/video-img/8.jpg);
+  background-image: url("/image/video-img/8.jpg");
 }
 
 .h-bg9 {
-  background-image: url(/image/video-img/9.jpg);
+  background-image: url("/image/video-img/9.jpg");
 }
 
 /*video highlights*/

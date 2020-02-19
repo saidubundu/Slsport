@@ -4,9 +4,11 @@
     <div class="card card-box table-responsive">
         <div class="card-head">
             <header>All User</header>
+            @can('isAdmin')
             <div class="tools">
                 <a  href="{{route('users.create')}}"><i class="fa fa-plus"></i>Add User</a>
             </div>
+                @endcan
         </div>
 
         <div class="card-body">
@@ -46,16 +48,15 @@
                         @foreach($users as $user)
                             <tr>
                                 <th scope="col">{{$user->id}}</th>
-                                <td><img height="60" src="{{$user->photo_id ? $user->photo->file : 'no image'}}" alt=""></td>
+                                <td><img height="60" src="{{$user->photo ? $user->photo->file : '/images/holder/profile.png'}}" alt=""></td>
                                 <td>{{$user->name}}</td>
                                 <td>{{$user->email}}</td>
                                 <td>{{$user->role ? $user->role->name : 'no role'}}</td>
-                                @if (Gate::denies('edit-users'))
+
                                     <td>{{$user->is_active == 1 ? 'Active' : 'Not active'}}</td>
-
-                                @endif
-
+                                @canany(['isAdmin','isModerator'])
                                 <td><a href="{{route('users.edit',$user->id)}}" class="btn btn-outline-info" role="button" aria-pressed="true">Edit</a></td>
+                                @endcan
                                 <td>
 
                                     {!! Form::open(['method'=>'DELETE', 'action'=> ['AdminUsersController@destroy', $user->id]]) !!}

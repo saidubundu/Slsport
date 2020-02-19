@@ -52,28 +52,29 @@ class User extends Authenticatable
         return $this->hasMany('App\Post');
     }
 
-    public function hasRoles($roles)
-    {
-        if ($this->role()->whereIn('name', $roles)->first()){
-            return true;
-        }
+//    public function hasRoles($roles)
+//    {
+//        if ($this->role()->whereIn('name', $roles)->first()){
+//            return true;
+//        }
+//
+//        return false;
+//    }
+//
+//    public function hasRole($role)
+//    {
+//        if ($this->role()->where('name', $role)->first()){
+//            return true;
+//        }
+//
+//        return false;
+//    }
 
-        return false;
-    }
+//    public function isAdmin(){
+//        if ($this->role->name =='Admin' && $this->is_active == 1){
+//            return true;
+//        }
+//        return false;
+//    }
 
-    public function hasRole($role)
-    {
-        if ($this->role()->where('name', $role)->first()){
-            return true;
-        }
-
-        return false;
-    }
-
-    public function isAdmin(){
-        if ($this->role->name =='Admin' && $this->is_active == 1){
-            return true;
-        }
-        return false;
-    }
 }

@@ -6,6 +6,7 @@ use App\Fixture;
 use App\Team;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class AdminFixturesController extends Controller
 {
@@ -45,8 +46,7 @@ class AdminFixturesController extends Controller
     {
         //
         Fixture::create($request->all());
-
-
+        Session::flash('created_fixture', 'Fixture successfully created');
         return redirect('/admin/fixtures');
     }
 
@@ -88,7 +88,7 @@ class AdminFixturesController extends Controller
         //
         $fixtures = Fixture::findOrFail($id);
         $fixtures->update($request->all());
-
+        Session::flash('updated_fixture', 'Fixture updated successfully');
         return redirect('/admin/fixtures');
     }
 
@@ -102,6 +102,7 @@ class AdminFixturesController extends Controller
     {
         //
         Fixture::findOrFail($id)->delete();
+        Session::flash('deleted_fixture', 'Fixture successfully deleted');
         return  redirect('/admin/fixtures');
     }
 }

@@ -14,7 +14,7 @@
                 <!-- /.colour-service-1-->
                 <div class="col-md-12">
                     <ol class="breadcrumb">
-                        <li><a href="index.html">home</a></li>
+                        <li><a href="/">home</a></li>
                         <li>।</li>
                         <li>club list</li>
                         <li>।</li>
@@ -36,7 +36,7 @@
             <div class="row">
                 <div class="col-md-12 col-lg-3">
                     <div class="club-authority">
-                        <img src="{{$team->photo_id ? $team->photo->file : 'no image'}}" alt="club logo">
+                        <img class="img-fluid img-thumbnail" src="{{$team->photo_id ? $team->photo->file : 'no image'}}" alt="club logo">
                         <h4 class="mt30">fc {{$team->name}}</h4>
                         <p>football club</p>
                         <div class="authority-box mt30">
@@ -57,9 +57,9 @@
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium est, consequatur laudantium cum ab fugit inventore unde dolorem, ipsum dicta dolores aut libero fugiat hic ut nihil, cumque explicabo ducimus Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit ducimus suscipit nulla libero corrupti totam dolores.</p> <br>
                         <p>Aenean accumsan vulputate erat sed sollicitudin. Donec porttitor rutrum justo a ullamcorper. Etiam venenatis condimentum metus sit amet dignissim. Morbi venenatis nisl lobortis neque cursus vehicula. Proin in convallis eros. Sed posuere, sapien sed tempus facilisis, arcu velit tincidunt nulla, at accumsan lacus ante accumsan tellus. In a condimentum dolor. Sed feugiat consectetur sapien, a feugiat nunc elementum ut. Mauris nisi felis, auctor et sem quis, condimentum condimentum odio. Aenean id eleifend nulla, nec blandit enim.</p>
                         <div class="history-img pad40">
-                            <img class="img-fluid" src="assets/images/club-list/1.jpg" alt="club img">
-                            <h3 class="mt20">Why would Neymar leave Barca? A look at why Neymar might leave Barcelona for Paris St-Germain, with expert analysis and opinion.</h3>
+                            <img class="img-fluid" src="{{asset('image/club-list/1.jpg')}}" alt="club img">
                         </div>
+                        <br>
                     </div>
                     <div class="team-box">
                         <div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -69,20 +69,26 @@
 {{--                            <a class="nav-item nav-link" id="nav-jersy-tab" data-toggle="tab" href="#nav-jersy" role="tab" aria-controls="nav-jersy" aria-selected="false">jersy</a>--}}
                         </div>
                         <div class="tab-content mt40" id="nav-tabContent">
-                            @foreach($players as $player)
+
                             <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+
                                 <div class="row">
+                                    @foreach($players as $player)
                                     <div class="col-lg-4 col-md-12">
+
                                         <div class="team-mem mb30">
-                                            <img class="full-width" src="{{$player->photo->file}}" alt="player img">
-                                            <h5 class="mt10">{{$player->name}}</h5>
+                                            <img class="full-width img-thumbnail img-fluid" src="{{$player->photo->file}}" alt="player img">
+                                            <h5 class="mt10"><a href="{{route('player.show',$player->id)}}">{{$player->name}}</a></h5>
                                             <p>{{$player->position->name}}</p>
                                         </div>
+
                                     </div>
+                                    @endforeach
 
                                 </div>
+
                             </div>
-                            @endforeach
+
 
                             <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
                                 <div class="row">

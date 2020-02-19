@@ -1,6 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
+
     <div class="card card-box">
         <div class="card-head">
             <header>Create post</header>
@@ -23,7 +24,9 @@
                 <div class="form-group col-md-6">
                     {!! Form::label('body', 'Body:') !!}
                     {!! Form::textarea('body', null, ['class'=>'form-control', 'rows'=>8]) !!}
+                    @include('includes.tinymce')
                 </div>
+
 
                 <div class="form-group col-md-6">
                     {!! Form::label('category_id', 'Category:') !!}

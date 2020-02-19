@@ -10,6 +10,23 @@
         </div>
 
         <div class="card-body">
+            @if(Session::has('created_result'))
+                <div class="alert alert-primary" role="alert">
+                    {{session('created_result')}}
+                </div>
+            @endif
+
+            @if(Session::has('updated_result'))
+                <div class="alert alert-success" role="alert">
+                    {{session('updated_result')}}
+                </div>
+            @endif
+
+            @if(Session::has('deleted_result'))
+                <div class="alert alert-danger" role="alert">
+                    {{session('deleted_result')}}
+                </div>
+            @endif
             @if($results)
                 <table class="table">
                     <thead class="thead-dark">

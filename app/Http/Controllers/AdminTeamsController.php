@@ -6,6 +6,7 @@ use App\Photo;
 use App\Team;
 use App\TeamLogo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class AdminTeamsController extends Controller
 {
@@ -52,7 +53,7 @@ class AdminTeamsController extends Controller
             $input['photo_id'] = $photo->id;
         }
         Team::create($input);
-
+        Session::flash('created_team', 'Team successfully created');
         return redirect('admin/teams');
     }
 
@@ -102,7 +103,7 @@ class AdminTeamsController extends Controller
             $input['photo_id'] = $photo->id;
         }
         $team->update($input);
-
+        Session::flash('updated_team', 'Team updated successfully');
         return redirect('/admin/teams');
     }
 
@@ -116,6 +117,7 @@ class AdminTeamsController extends Controller
     {
         //
         Team::findOrFail($id)->delete();
+        Session::flash('deleted_team', 'Successfully deleted');
         return redirect('/admin/teams');
 
     }

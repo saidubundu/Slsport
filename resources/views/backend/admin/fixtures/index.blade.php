@@ -10,6 +10,23 @@
         </div>
 
         <div class="card-body">
+            @if(Session::has('created_fixture'))
+                <div class="alert alert-primary" role="alert">
+                    {{session('created_fixture')}}
+                </div>
+            @endif
+
+            @if(Session::has('updated_fixture'))
+                <div class="alert alert-success" role="alert">
+                    {{session('updated_fixture')}}
+                </div>
+            @endif
+
+            @if(Session::has('deleted_fixture'))
+                <div class="alert alert-danger" role="alert">
+                    {{session('deleted_fixture')}}
+                </div>
+            @endif
             @if($fixtures)
                 <table class="table">
                     <thead class="thead-dark">
@@ -30,10 +47,10 @@
                     @foreach($fixtures as $fixture)
                         <tr>
                             <th scope="row">{{$fixture->id}}</th>
-                            <td><img height="50" width="50" class="img-fluid img-thumbnail" src="{{$fixture->hometeam->photo->file}}" alt=""></td>
+                            <td><img height="70" width="60" class="img-fluid img-thumbnail" src="{{$fixture->hometeam->photo->file}}" alt=""></td>
                             <td>{{$fixture->hometeam->name}}</td>
                             <td>vs</td>
-                            <td><img height="50" width="50" class="img-fluid img-thumbnail" src="{{$fixture->awayteam->photo->file}}" alt=""></td>
+                            <td><img height="70" width="60" class="img-fluid img-thumbnail" src="{{$fixture->awayteam->photo->file}}" alt=""></td>
                             <td>{{$fixture->awayteam->name}}</td>
                             <td>{{$fixture->date}}</td>
                             <td>{{$fixture->field}}</td>

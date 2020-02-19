@@ -1,6 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
+    @include('includes.tinymce')
     <div class="card card-box">
         <div class="card-head">
             <header>Edit post</header>

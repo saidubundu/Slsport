@@ -25,6 +25,7 @@
 
 
 
+
     <!--[if lt IE 9]>
     <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -33,7 +34,8 @@
 </head>
 
 <body>
-
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v6.0&appId=509994596321415&autoLogAppEvents=1"></script>
 <!-- preloader -->
 <div class="preloader">
     <div class='loader'>
@@ -58,7 +60,7 @@
                 <div class="row">
                     <div class="col-lg-3">
                         <div class="navbar-header">
-                            <a class="navbar-brand" href="admin.blade.php"><img src="assets/images/logo/logo.png" alt="BEFIT logo"></a>
+                            <a class="navbar-brand" href="/"><img src="{{asset('image/logo/logotrans.png')}}" alt="BEFIT logo"></a>
                             <button class="navbar-toggler d-md-inlline d-xl-none" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="fa fa-bars"></span>
                             </button>
@@ -69,7 +71,7 @@
                             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                                 <ul class="navbar-nav ml-auto">
                                     <li class="nav-item ">
-                                        <a class="nav-link" href="{{route('front.index')}}">home</a>
+                                        <a class="nav-link" href="/">home</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="{{route('clubs.index')}}">clublist</a>
@@ -81,14 +83,16 @@
                                         <a class="nav-link" href="{{route('result.index')}}">results</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="{{route('table.index')}}">point table</a>
+                                        <a class="nav-link" href="{{route('table.index')}}">Table</a>
                                     </li>
                                     <li class="nav-item dropdown">
                                         <a class="nav-link " href="{{route('post.index')}}" >BLOGS</a>
                                     </li>
-                                    <li class="nav-item ">
-                                        <a class="nav-link " href="#">more</a>
-                                    </li>
+                                    @canany(['isAdmin','isModerator','isEditor'])
+                                        <li class="nav-item ">
+                                            <a class="nav-link " href="/admin">Admin</a>
+                                        </li>
+                                    @endcanany
                                 </ul>
                             </div>
                         </nav>
@@ -107,29 +111,29 @@
                 </div>
             </div>
         </div>
-        <div class="header-match-area pad20 yelow d-none d-lg-block">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-4">
-                        <div class="live-up">
-                            <p><strong>live score</strong> : <span>rma</span> 0:0 <span>bra</span></p>
-                        </div>
-                    </div>
-                    <div class="col-lg-8">
-                        <div class="football-match">
-                            <a href="#">LIGA BBVA </a>
-                            <a href="#">UEFA</a>
-                            <a href="#">EPL</a>
-                            <a href="#">SUPER CUP </a>
-                            <a class="active" href="#">WORLD CUP</a>
-                            <a href="#">NPL</a>
-                            <a href="#">SOUTHERN</a>
-                            <a href="#">NATIONAL LEAGUE</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+{{--        <div class="header-match-area pad20 yelow d-none d-lg-block">--}}
+{{--            <div class="container">--}}
+{{--                <div class="row">--}}
+{{--                    <div class="col-lg-4">--}}
+{{--                        <div class="live-up">--}}
+{{--                            <p><strong>live score</strong> : <span>rma</span> 0:0 <span>bra</span></p>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                    <div class="col-lg-8">--}}
+{{--                        <div class="football-match">--}}
+{{--                            <a href="#">LIGA BBVA </a>--}}
+{{--                            <a href="#">UEFA</a>--}}
+{{--                            <a href="#">EPL</a>--}}
+{{--                            <a href="#">SUPER CUP </a>--}}
+{{--                            <a class="active" href="#">WORLD CUP</a>--}}
+{{--                            <a href="#">NPL</a>--}}
+{{--                            <a href="#">SOUTHERN</a>--}}
+{{--                            <a href="#">NATIONAL LEAGUE</a>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
     </header>
     <!--header end-->
 
@@ -137,111 +141,7 @@
    @yield('content')
     <!--fixtures area end-->
 
-    <footer>
-        <div class="footer-area bg2 parallax overlay2 pad60">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="section-title ">
-                            <h4> <span class="wht-txt">newsletter</span></h4>
-                        </div>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="subscribe">
-                            <form action="#">
-                                <input class="name" type="text" placeholder="youremail@domain.com">
-                            </form>
-                            <a href="#"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="footer-box pt60">
-                            <div class="footer-content add">
-                                <div class="footer-logo footer-content">
-                                    <img src="assets/images/logo/logo.png" alt="footer logo">
-                                </div>
-                                <p class="pt30">Lorem ipsum dolor sit amet, ei ubique fastidii vim. Elitr feugait complectitur eu pro, sea audire ponderum eleifend cu. Vim at fuisset.</p>
-                                <div class="add-info">
-                                    <p><a href="#"><i class="fa fa-map-marker"></i></a>23 New Design Street, Melbourne</p>
-                                    <p><a href="#"><i class="fa fa-location-arrow"></i></a><a href="http://sitetemplate.demo.ithemeslab.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d0a3a0bfa2a4aa90b7bdb1b9bcfeb3bfbd">[email&#160;protected]</a></p>
-                                    <p class="mb-0"><a href="#"><i class="fa fa-phone" ></i></a>+880-123-456-7890</p>
-                                </div>
-                            </div>
-                            <div class="footer-content">
-                                <div class="ftr-title xs-mt-40">
-                                    <h4>sponsors</h4>
-                                </div>
-                                <div class="partners pt30">
-                                    <a href="#">fantasy football</a>
-                                    <a href="#">super 6</a>
-                                    <a href="#">sky Sports Pub Finder</a>
-                                    <a href="#">Living for Sport</a>
-                                    <a href="#">Planet Rugby</a>
-                                    <a href="#">Cricket365</a>
-                                </div>
-                            </div>
-                            <div class="footer-content">
-                                <div class="ftr-title xs-mt-40">
-                                    <h4>latest post</h4>
-                                </div>
-                                <div class="news-info pt30">
-                                    <div class="news-detail nws-bar zoom">
-                                        <img src="assets/images/footer/1.jpg" alt="footer img">
-                                        <p>Set yourself the challenge of doing the bare minimum.</p>
-                                    </div>
-                                    <div class="news-detail zoom">
-                                        <img src="assets/images/footer/2.jpg" alt="footer img">
-                                        <p>Body fat percentage: what does it really mean?</p>
-                                    </div>
-                                    <div class="news-detail zoom">
-                                        <img src="assets/images/footer/3.jpg" alt="footer img">
-                                        <p class="mb-0">This treatment sounded just what I was looking for.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="footer-content">
-                                <div class="ftr-title xs-mt-40">
-                                    <h4>football</h4>
-                                </div>
-                                <div class="partners pt30">
-                                    <a href="#">FIFA 2015</a>
-                                    <a href="#">Copa 2015</a>
-                                    <a href="#">UEFA Europa League</a>
-                                    <a href="#">La Liga League</a>
-                                    <a href="#">Uro 2014</a>
-                                    <a href="#">Africa 2015</a>
-                                </div>
-                            </div>
-                            <div class="footer-content">
-                                <div class="ftr-title xs-mt-40">
-                                    <h4>sportz channel</h4>
-                                </div>
-                                <div class="partners pt30">
-                                    <a href="#">Sports Main Event</a>
-                                    <a href="#">S. Sports Premier League</a>
-                                    <a href="#">Sky Sports Football</a>
-                                    <a href="#">Sky Sports Cricket</a>
-                                    <a href="#">Sky Sports Golf</a>
-                                    <a href="#">Sky Sports Action</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="copyright pad30">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h4>Copyright © {{\Carbon\Carbon::now()->year}} designed by <span>peektower</span> All Rights Reserved</h4>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+    @include('frontend.partials.footer')
 
 </div>
 <!--main-container-->
@@ -274,9 +174,8 @@
 
 <!--All Js Here-->
 <!-- jquery latest version -->
-<script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="assets/js/vendor/jquery-3.2.1.min.js"></script>
+{{--<script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="assets/js/vendor/jquery-3.2.1.min.js"></script>--}}
 <!--Migrate Js-->
-<script id="dsq-count-scr" src="//slsport.disqus.com/count.js" async></script>
 <script src="{{asset('js/front.js')}}"></script>
 @yield('scripts')
 </body>

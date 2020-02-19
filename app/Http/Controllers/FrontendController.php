@@ -7,6 +7,7 @@ use App\LiveScore;
 use App\Post;
 use App\Result;
 use App\Standing;
+use App\Statistic;
 use Illuminate\Http\Request;
 
 class FrontendController extends Controller
@@ -24,8 +25,9 @@ class FrontendController extends Controller
         $scores = LiveScore::latest()->get();
         $fixtures = Fixture::all();
         $results = Result::latest()->get();
+        $statistics = Statistic::orderBy('goal', 'DESC')->limit(4)->get();
         return view('frontend.home.index',compact('posts','standings','scores','fixtures',
-                                        'results'));
+                                        'results', 'statistics'));
 
     }
 

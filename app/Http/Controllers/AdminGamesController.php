@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\LiveScore;
 use App\Team;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class AdminGamesController extends Controller
 {
@@ -43,6 +44,7 @@ class AdminGamesController extends Controller
     {
         //
         LiveScore::create($request->all());
+        Session::flash('created_game', 'Live Score successfully created');
         return redirect('/admin/games');
     }
 
@@ -83,6 +85,7 @@ class AdminGamesController extends Controller
         //
         $scores = LiveScore::findOrFail($id);
         $scores->update($request->all());
+        Session::flash('updated_game', 'Live Score updated successfully');
         return redirect('/admin/games');
     }
 
@@ -96,6 +99,7 @@ class AdminGamesController extends Controller
     {
         //
         LiveScore::findOrFail($id)->delete();
+        Session::flash('deleted_game', 'Live Score successfully deleted');
         return redirect('/admin/games');
     }
 }
